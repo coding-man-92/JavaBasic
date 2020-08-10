@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jq/jquery-1.11.0.js"></script>
+</head>
+<script>
+    function person() {
+
+    }
+    var p = new person();
+    // 任何对象都有属性，只有DOM对象拥有属性节点
+    // 给属性赋值:对象.属性名 = 值/对象["属性名"] = 值
+    // 获取属性值:对象.属性名/对象["属性名"]
+    p.name = "zs";
+    console.log(p.name);
+    p["name"] = "ls";
+    console.log(p["name"]);
+</script>
+
+<body>
+<!--在html标签中添加的属性就是属性节点,属性节点均保存在DOM元素的attributes属性中-->
+<span name = "777">
+
+</span>
+<script>
+    // 给属性节点赋值，获取属性节点的值
+    var spanEle = document.getElementsByTagName("span")[0];
+    spanEle.setAttribute("name","888");
+    console.log(spanEle.getAttribute("name"));
+</script>
+</body>
+</html>
